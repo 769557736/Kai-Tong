@@ -1,0 +1,14 @@
+package kaitong;
+
+public class dear {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+System.out.println("you are the addiction that I can't give up");
+System.out.println("please trust me");
+	}
+
+}
