@@ -1,0 +1,18 @@
+package a;
+import java.util.Scanner;
+public class a4 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+	Scanner num=new Scanner(System.in);
+	int a= num.nextInt();
+	int b= num.nextInt();
+	int c= num.nextInt();
+	System.out.println("输出最大的数");
+	int let =a>b?a:(a>c?a:c);
+    System.out.println(let);
+	}
+
+}
