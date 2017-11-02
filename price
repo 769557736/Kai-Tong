@@ -1,0 +1,30 @@
+package day04;
+import java.util.Scanner;
+public class Cashier {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+	    Scanner scan=new Scanner(System.in);
+	    System.out.println("请输入单价：");
+	    double price= scan.nextDouble();
+	    System.out.println("请输入数量：");
+	    double num =scan.nextInt();
+	    System.out.println("应收金额："+num*price);
+	    System.out.println("请输入金额：");
+	    double money=scan.nextDouble();
+	    System.out.println("找零："+(money-num*price));
+	    double x=money-num*price;
+	    double back;
+	    if(x>0){
+	    	System.out.println(x);
+	    }else System.out.println("金额不够");
+    
+    
+    
+    
+    
+	}
+
+}
