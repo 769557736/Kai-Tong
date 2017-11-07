@@ -1,0 +1,24 @@
+package b;
+
+public class b13 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		for(int i=0;i<5;i++){
+			for(int q=4;q>i;q--){
+				System.out.print(" ");
+			}
+			
+			for(int j=i*2+1;j>0;j--){
+				
+				System.out.print("*");
+			}
+			System.out.println();
+			
+		}
+
+	}
+
+}
