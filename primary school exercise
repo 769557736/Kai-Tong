@@ -1,0 +1,78 @@
+package b;                     
+import java.util.Random;
+import java.util.Scanner;
+public class b18 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		System.out.println("欢迎登录小学生练习系统，请选择联系题目（20以内+—*/法）");
+		System.out.println("1.加法题10道");
+		System.out.println("2.减法题10道");
+		System.out.println("3.减法题10道");
+		System.out.println("4.除法题10道");
+		System.out.println("5.我来错了，要退出");
+		Scanner scan=new Scanner(System.in);
+		Random numb=new Random();
+		System.out.print("请输入数字：");
+		int num=scan.nextInt();
+		int grade=0;
+		switch (num){
+		case 1:
+			for(int a=0;a<10;a++){
+			int ran1=numb.nextInt(20);
+			int ran2=numb.nextInt(20);
+			System.out.println(ran1+"+"+ran2+"="+"?");
+			int num1=scan.nextInt();
+			if(num1==ran1+ran2){
+				
+				grade=grade+10;
+				System.out.println("答对了加十分");
+			}else System.out.println("很遗憾，继续努力");
+			}
+			System.out.print(grade+"分");break;
+		case 2:
+			for(int a=0;a<10;a++){
+				int ran1=numb.nextInt(20);
+				int ran2=numb.nextInt(20);
+				if(ran1<ran2){
+					int ran3=0;
+					ran1=ran3;ran2=ran1;ran3=ran2;
+				}
+					System.out.println(ran1+"-"+ran2+"="+"?");
+				int num1=scan.nextInt();
+				if(num1==ran1-ran2){
+					grade=grade+10;
+					System.out.println("答对了加十分");
+				}else System.out.println("很遗憾，继续努力");		
+				}
+			System.out.print(grade+"分");break;
+		case 3:
+			for(int a=0;a<10;a++){
+				int ran1=numb.nextInt(20);
+				int ran2=numb.nextInt(20);
+				System.out.println(ran1+"*"+ran2+"="+"?");
+				int num1=scan.nextInt();
+				if(num1==ran1*ran2){
+					grade=grade+10;
+					System.out.println("答对了加十分");
+				}else System.out.println("很遗憾，继续努力");
+				}System.out.print(grade+"分");break;
+		case 4:
+			for(int a=0;a<10;a++){
+				int ran1=numb.nextInt(19)+1;
+				int ran2=numb.nextInt(20);
+				System.out.println(ran1+"/"+ran2+"="+"?");
+				int num1=scan.nextInt();
+				if(num1==ran1/ran2){
+					grade=grade+10;
+					System.out.println("答对了加十分");
+				}else System.out.println("很遗憾，继续努力");
+				}
+			System.out.print(grade+"分");break;
+		case 5:
+			System.out.print("我来错了，要退出!");
+			}	
+			}
+		}
