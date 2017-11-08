@@ -1,0 +1,22 @@
+package b;
+import java.util.Scanner;
+public class b24 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner scan=new Scanner(System.in);
+		System.out.print("请输入速度");
+		double speed=scan.nextDouble();
+		if(speed>7.91&&speed<=11.19){
+			System.out.println("表示飞船绕地球做匀速圆周运动");
+		}else if(speed<16.67){
+			System.out.println("飞船离开地球的控制 ,围绕太阳转");
+		}else{
+			System.out.println("表示飞船挣脱太阳引力飞出太阳系");
+		}
+
+	}
+
+}
