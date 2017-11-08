@@ -1,0 +1,27 @@
+package b;
+import java.util.Scanner;
+public class b23 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner scan=new Scanner(System.in);
+		System.out.println("请输入总头数：");
+		int n=scan.nextInt();
+		System.out.println("请输入总腿数：");
+		int m=scan.nextInt();
+		double x=(2*n)-(0.5*m);
+		double y=0.5*m-n;
+		if(x>=0&&y>=0&&n==x+y){
+			System.out.println(x);
+			System.out.println(y);
+		}else{
+			System.out.println("NO answer");
+		}
+		
+		
+
+	}
+
+}
