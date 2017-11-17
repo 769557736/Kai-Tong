@@ -1,0 +1,78 @@
+package b;
+import java.util.Scanner;
+public class b39 {
+	public static void main(String[] args) {
+			int count=0;
+			System.out.println("欢迎来到猜字符游戏！");
+			char[] chs = generate();
+			System.out.println(chs);
+			System.out.println("开始游戏请输字母：");
+			Scanner scan=new Scanner(System.in);
+			int []result= new int [2];
+			
+			while (true) {//“ABCD"
+				String inputStr = scan.next().trim().toUpperCase();
+				if ("EXIT".equals(inputStr)) {
+					System.out.println("GuessingGame>谢谢你的尝试，再见！");
+					break;
+				}
+
+				char[] input = inputStr.toCharArray();
+				result = check(chs, input);
+				if (result[0] == chs.length) {// 完全猜对的情况
+					int score = 100 * chs.length - count * 10;
+					System.out.println("GuessingGame>恭喜你猜对了！你的得分是：" + score);
+					break;
+				} else {
+					count++;
+					System.out.println("GuessingGame>你猜对" + result[1] + "个字符，其中"
+							+ result[0] + "个字符的位置正确！（总次数=" + count + "，exit——退出）");
+				}
+			}
+			scan.close();
+		}
+			
+	
+	public static char[] generate(){
+		char[] letters = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
+				'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
+				'W', 'X', 'Y', 'Z' };
+		boolean [] flags=new boolean[letters.length];
+		char []chs =new char[5];
+		for(int i=0;i<chs.length;i++){
+			int index;
+			do{
+				index=(int )(Math.random()*letters.length);
+			}while(flags[index]);
+			chs[i]=letters[index];
+			flags[index]=true;
+			
+			
+		}
+		
+		return chs;
+	}
+		
+	public static  int []  check(char []chs,char []input){
+		int result[]=new int [2];
+		for(int i=0;i<input.length;i++){
+			for(int j=0;j<chs.length;j++){
+				if(chs[i]==input[j]){
+					result[0]++;
+				}else if(i==j){
+					result[1]++;
+					
+				}
+				break;
+			}
+		}
+		return result;
+		
+		
+		
+		
+	} 
+
+
+
+}
