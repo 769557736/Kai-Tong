@@ -1,0 +1,52 @@
+package day02;
+import java.util.Scanner;
+public class StringUpperLowerDemo {
+	static String isChange(String str){
+		String newStr="";
+		for(int i=0;i<str.length();i++){
+			char s1=str.charAt(i);
+			if(s1>='A'&&s1<='Z'){
+				s1+=32;
+			}else if(s1>='a'&&s1<='z'){
+				s1-=32;
+			}
+			newStr+=s1;
+			}
+			return newStr;
+}
+	static String isChange1(String str){
+		char[]array=new char [str.length()];
+		String newStr="";
+		for(int i=0;i<str.length();i++){
+			char s1=str.charAt(i);
+			if(s1>='A'&&s1<='Z'){
+				s1+=32;
+			}else if(s1>='a'&&s1<='z'){
+				s1-=32;
+			}
+			array[i]=s1;
+		
+		}
+		return new String(array);
+		
+	
+	}
+	public static void main(String[] args) {
+		/*String s1="hello";
+		String s2=s1.toUpperCase();
+		System.out.println(s2);
+		String s3=s2.toLowerCase();
+		System.out.println(s3);
+		*/
+		Scanner scan=new Scanner(System.in);
+		System.out.println("请输入字符串");
+		String str=scan.next();
+		String str1=isChange(str);
+		System.out.println(str1);
+		String str2=isChange(str);
+		System.out.println(str2);
+	}	
+		
+		
+
+}
