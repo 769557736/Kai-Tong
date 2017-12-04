@@ -1,0 +1,33 @@
+package integer;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+/*
+ * 程序启动后要求用户输入一个计算表达式；
+ * 如1+1
+ * 然后输出1+1=2；
+ */
+public class Test {
+	public static void main(String[] args) {
+		Scanner scanner=new Scanner(System.in);
+		System.out.println("题目是");
+		String str=scanner.nextLine();
+		String string=(str);
+		String []data=str.split("[\\+\\-\\*\\/]"); 
+		for(int i=0;i<data.length;i++){}
+		int d=Integer.parseInt(data[0]);
+		int d1=Integer.parseInt(data[1]);
+		String []data1=str.split("\\d");
+		if(data1[1].equals("+")){
+			System.out.println(data[0]+"+"+data[1]+"="+(d+d1));
+		}else if(data1[1].equals("-")){
+			System.out.println(data[0]+"-"+data[1]+"="+(d-d1));
+		}else if(data1[1].equals("*")){
+			System.out.println(data[0]+"*"+data[1]+"="+(d*d1));
+		}else {
+			System.out.println(data[0]+"/"+data[1]+"="+(d/d1));
+		}
+		
+	}
+}
