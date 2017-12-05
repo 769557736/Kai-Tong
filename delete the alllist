@@ -1,0 +1,51 @@
+package file;
+import java.io.File;
+/**
+ * 删除指定的File表示的文件或目录
+ * @author 丶空称之为伱等
+ *
+ */
+public class Test {
+	public static void main(String[] args) {
+		File dir =new File("a");
+		delete(dir);
+		File []s1=dir.listFiles();
+		
+	}
+	/**
+	 * 间隔定的File所表示的文件或目录删除
+	 */
+	public static void delete(File f){
+		File []s1=f.listFiles();
+		for(int i=0;i<s1.length;i++){
+			s1[i].delete();
+			if(s1[i].exists()){
+			Test.delete(s1[i]);
+			}
+			
+		}
+		f.delete();
+	}
+}
+package file;
+
+import java.io.File;
+
+public class Test1 {
+
+	public static void main(String[] args) {
+			File dir =new File("a");
+			delete(dir);
+			File []s1=dir.listFiles();
+
+}
+	public static void delete(File f){
+		if(f.isDirectory()){
+			File []s1=f.listFiles();
+			for(int i=0;i<s1.length;i++){
+				Test.delete(s1[i]);
+			}
+		}
+		f.delete();
+	}	
+}
